@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arjun — Multi-Disciplinary Creative Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Arjun: Video Editing, Content Writing, Graphic Design, Creator Design, and Concept Arts. Minimalist card-based showcase.">
+  <meta property="og:title" content="Arjun — Creative Portfolio">
+  <meta property="og:description"
+    content="Video Editing · Content Writing · Graphic Design · Creator Design · Concept Arts.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f4eee5">
+
+  <!-- Google Fonts: Syne (Headlines), Plus Jakarta Sans (Body), JetBrains Mono (Tags & HUD) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+   MINIMAL EDITORIAL LIGHT BROWN & BLACK DESIGN SYSTEM
+   ========================================================================== */
+    :root {
+      --bg-deep: #f4eee5;
+      --bg-surface: #eadecc;
+      --bg-card: #ffffff;
+      --bg-card-glass: rgba(255, 255, 255, 0.85);
+
+      --border-subtle: rgba(38, 30, 22, 0.1);
+      --border-medium: rgba(38, 30, 22, 0.18);
+      --border-focus: rgba(180, 83, 9, 0.6);
+
+      --accent-amber: #b45309;
+      --accent-amber-glow: rgba(180, 83, 9, 0.2);
+      --accent-teal: #0e7490;
+      --accent-red: #dc2626;
+
+      --text-primary: #18130f;
+      --text-secondary: #40342a;
+      --text-muted: #736456;
+      --text-dim: #9c8e80;
+
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Base Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: var(--font-body);
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(180, 83, 9, 0.06), transparent),
+        radial-gradient(ellipse 70% 50% at 90% 40%, rgba(194, 101, 30, 0.05), transparent),
+        radial-gradient(ellipse 80% 60% at 10% 80%, rgba(14, 116, 144, 0.04), transparent);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    /* Subtle Warm Texture */
+    .film-grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: clamp(1.25rem, 4vw, 3rem);
+      padding-right: clamp(1.25rem, 4vw, 3rem);
+    }
+
+    /* Typography Utilities */
+    .font-display {
+      font-family: var(--font-display);
+    }
+
+    .font-mono {
+      font-family: var(--font-mono);
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(38, 30, 22, 0.04);
+    }
+
+    .section-tag::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-amber);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+      max-width: 62ch;
+      line-height: 1.65;
+    }
+
+    .section-header {
+      margin-bottom: 2.75rem;
+    }
+
+    /* Discipline Sections */
+    .discipline-section {
+      padding: clamp(4.5rem, 7.5vw, 7.5rem) 0;
+      border-top: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .discipline-section.bg-alt {
+      background: rgba(234, 222, 204, 0.4);
+    }
+
+    /* ==========================================================================
+   NAVIGATION (SHOWS ONLY THE 5 SPECIFIC SECTIONS)
+   ========================================================================== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: all var(--transition-smooth);
+      padding: 1.1rem 0;
+      background: rgba(244, 238, 229, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .site-nav.scrolled {
+      padding: 0.8rem 0;
+      box-shadow: 0 8px 24px rgba(38, 30, 22, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-amber);
+    }
+
+    .brand-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+
+    /* Only the 5 specific requested sections in navbar */
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    @media (min-width: 992px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links a {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+      position: relative;
+      padding: 4px 0;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--text-primary);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-full);
+      background: #18130f;
+      color: #f4eee5;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all var(--transition-smooth);
+      box-shadow: 0 4px 16px rgba(24, 19, 15, 0.2);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--accent-amber);
+      box-shadow: 0 6px 20px var(--accent-amber-glow);
+    }
+
+    /* ==========================================================================
+   MINIMAL HERO
+   ========================================================================== */
+    .hero-minimal {
+      padding-top: 140px;
+      padding-bottom: 70px;
+      position: relative;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(2.8rem, 7vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+    }
+
+    .hero-lead-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: flex-end;
+    }
+
+    @media (min-width: 850px) {
+      .hero-lead-row {
+        grid-template-columns: 1.3fr 1fr;
+      }
+    }
+
+    .hero-lead-text {
+      font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .discipline-jump-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .jump-pill {
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+      box-shadow: 0 2px 6px rgba(38, 30, 22, 0.03);
+    }
+
+    .jump-pill:hover {
+      background: #18130f;
+      color: #f4eee5;
+      border-color: #18130f;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+   MINIMAL CARD FORMAT (SHARED ACROSS ALL 5 SECTIONS)
+   ========================================================================== */
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .card-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .card-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .portfolio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-smooth);
+      box-shadow: 0 6px 18px rgba(38, 30, 22, 0.04);
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-medium);
+      box-shadow: 0 16px 36px rgba(38, 30, 22, 0.1);
+    }
+
+    .portfolio-card.featured {
+      grid-column: 1 / -1;
+    }
+
+    .card-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0d0f16;
+      overflow: hidden;
+    }
+
+    .card-img-wrap.aspect-tall {
+      aspect-ratio: 9/12;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .portfolio-card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .card-badge-top {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(24, 19, 15, 0.85);
+      backdrop-filter: blur(8px);
+      color: #f4eee5;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .card-action-btn {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #18130f;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      transition: all var(--transition-fast);
+    }
+
+    .portfolio-card:hover .card-action-btn {
+      background: var(--accent-amber);
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .card-tag-pill {
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(38, 30, 22, 0.05);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+   INTERACTIVE COLOR GRADING LAB CARD (INSIDE VIDEO EDITING)
+   ========================================================================== */
+    .color-lab-card {
+      margin-top: 2rem;
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(38, 30, 22, 0.08);
+    }
+
+    .lab-hud-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.25rem;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      gap: 0.75rem;
+    }
+
+    .compare-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      max-height: 580px;
+      overflow: hidden;
+      user-select: none;
+      cursor: ew-resize;
+      background: #000;
+    }
+
+    .compare-layer-log {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      filter: saturate(0.24) contrast(0.68) brightness(1.22);
+    }
+
+    .compare-layer-log img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .compare-layer-graded {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    }
+
+    .compare-layer-graded img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .compare-handle-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: var(--accent-amber);
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    .compare-handle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #18130f;
+      border: 2px solid var(--accent-amber);
+      display: grid;
+      place-items: center;
+      color: var(--accent-amber);
+    }
+
+    .compare-handle-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .lab-controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      gap: 1rem;
+    }
+
+    .lut-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .lut-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+    }
+
+    .lut-btn.active {
+      background: #18130f;
+      color: #f4eee5;
+      border-color: #18130f;
+    }
+
+    /* ==========================================================================
+   02. CONTENT WRITING & EDITORIAL WORKBENCH STYLES
+   ========================================================================== */
+    .writing-stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .writing-stats-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .writing-stat-box {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.25rem;
+      box-shadow: 0 4px 14px rgba(38, 30, 22, 0.03);
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .writing-stat-box:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-amber);
+    }
+
+    .writing-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
+
+    .writing-stat-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Script Snippet Box on Card */
+    .script-snippet-preview {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      background: #faf7f2;
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent-amber);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    .script-snippet-preview .slugline {
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .script-snippet-preview .dialogue-cue {
+      text-align: center;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 5px;
+    }
+
+    .script-snippet-preview .dialogue-body {
+      padding: 0 8%;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    /* Interactive Hook Switcher Card */
+    .hook-switcher-box {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .hook-toggle-bar {
+      display: flex;
+      background: var(--bg-surface);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 1.15rem;
+    }
+
+    .hook-toggle-btn {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .hook-toggle-btn.active {
+      background: #18130f;
+      color: #f4eee5;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .hook-display-area {
+      padding: 1.15rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-medium);
+      min-height: 155px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .hook-display-area.generic {
+      background: rgba(220, 38, 38, 0.04);
+      border-color: rgba(220, 38, 38, 0.25);
+    }
+
+    .hook-display-area.engineered {
+      background: rgba(16, 185, 129, 0.05);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .hook-metric-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.75rem;
+      width: fit-content;
+    }
+
+    .hook-metric-badge.bad {
+      background: rgba(220, 38, 38, 0.12);
+      color: #b91c1c;
+    }
+
+    .hook-metric-badge.good {
+      background: rgba(16, 185, 129, 0.15);
+      color: #047857;
+    }
+
+    .hook-quote-text {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    /* Audio Wave Visualizer Card (Brand Voice) */
+    .audio-wave-wrap {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 28px;
+      padding: 0 2px;
+      margin-bottom: 1.15rem;
+    }
+
+    .wave-bar {
+      flex: 1;
+      background: var(--accent-amber);
+      border-radius: 4px;
+      height: 25%;
+      animation: wavePulse 1.4s ease-in-out infinite alternate;
+    }
+
+    .wave-bar:nth-child(2) {
+      animation-delay: 0.15s;
+      height: 50%;
+    }
+
+    .wave-bar:nth-child(3) {
+      animation-delay: 0.3s;
+      height: 80%;
+    }
+
+    .wave-bar:nth-child(4) {
+      animation-delay: 0.45s;
+      height: 35%;
+    }
+
+    .wave-bar:nth-child(5) {
+      animation-delay: 0.2s;
+      height: 95%;
+    }
+
+    .wave-bar:nth-child(6) {
+      animation-delay: 0.5s;
+      height: 60%;
+    }
+
+    .wave-bar:nth-child(7) {
+      animation-delay: 0.35s;
+      height: 75%;
+    }
+
+    .wave-bar:nth-child(8) {
+      animation-delay: 0.1s;
+      height: 40%;
+    }
+
+    .wave-bar:nth-child(9) {
+      animation-delay: 0.25s;
+      height: 90%;
+    }
+
+    .wave-bar:nth-child(10) {
+      animation-delay: 0.4s;
+      height: 45%;
+    }
+
+    .wave-bar:nth-child(11) {
+      animation-delay: 0.6s;
+      height: 65%;
+    }
+
+    .wave-bar:nth-child(12) {
+      animation-delay: 0.18s;
+      height: 30%;
+    }
+
+    @keyframes wavePulse {
+      0% {
+        transform: scaleY(0.3);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+    /* ==========================================================================
+   INTERACTIVE SCRIPT READER WORKBENCH
+   ========================================================================== */
+    .editorial-reader-card {
+      margin-top: 2rem;
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(38, 30, 22, 0.08);
+    }
+
+    .editorial-hud-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.25rem;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      gap: 0.75rem;
+    }
+
+    .script-tabs-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .script-tab-btn {
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .script-tab-btn.active {
+      background: #18130f;
+      color: #f4eee5;
+      border-color: #18130f;
+    }
+
+    /* Paper Page Styling */
+    .script-paper-sheet {
+      background: #faf7f2;
+      position: relative;
+      padding: clamp(2rem, 5vw, 3.25rem) clamp(1.5rem, 6vw, 4.5rem);
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #18130f;
+      min-height: 310px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Ring Punch Binder Visual */
+    .binder-punches {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      pointer-events: none;
+    }
+
+    .punch-hole {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #eadecc;
+      box-shadow: inset 0 2px 4px rgba(38, 30, 22, 0.25);
+      border: 1px solid rgba(38, 30, 22, 0.15);
+    }
+
+    .script-text-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .script-text-content .sc-slug {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #18130f;
+      margin-bottom: 0.85rem;
+      letter-spacing: 0.05em;
+      border-bottom: 1px dashed rgba(38, 30, 22, 0.2);
+      padding-bottom: 4px;
+    }
+
+    .script-text-content .sc-action {
+      margin-bottom: 1.15rem;
+      color: #382d24;
+    }
+
+    .script-text-content .sc-character {
+      text-align: center;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 1.25rem;
+      margin-bottom: 2px;
+      color: #18130f;
+      letter-spacing: 0.08em;
+    }
+
+    .script-text-content .sc-parenthetical {
+      text-align: center;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: #6e5f52;
+      margin-bottom: 4px;
+    }
+
+    .script-text-content .sc-dialogue {
+      max-width: 440px;
+      margin: 0 auto 1.25rem;
+      text-align: left;
+      color: #18130f;
+    }
+
+    .script-text-content .sc-transition {
+      text-align: right;
+      font-weight: 700;
+      margin-top: 1.25rem;
+      color: var(--accent-amber);
+    }
+
+    .editorial-hud-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: var(--bg-surface);
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .copy-script-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      background: #18130f;
+      color: #f4eee5;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .copy-script-btn:hover {
+      background: var(--accent-amber);
+      color: #ffffff;
+    }
+
+    .copy-status-indicator {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #047857;
+      display: none;
+    }
+
+    /* ==========================================================================
+   MINIMAL CONTACT & FOOTER
+   ========================================================================== */
+    .contact-section {
+      padding: clamp(5rem, 8vw, 8rem) 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-card-box {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      box-shadow: 0 16px 40px rgba(38, 30, 22, 0.06);
+    }
+
+    .contact-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 900px) {
+      .contact-layout-grid {
+        grid-template-columns: 1fr 1.3fr;
+      }
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .form-input-ctrl {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-input-ctrl:focus {
+      border-color: var(--accent-amber);
+    }
+
+    .site-footer-minimal {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    /* ==========================================================================
+   INTERACTIVE MODAL
+   ========================================================================== */
+    dialog#dlg {
+      position: fixed;
+      inset: 0;
+      margin: auto;
+      width: min(1040px, 94vw);
+      max-height: 90vh;
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      overflow: auto;
+      box-shadow: 0 35px 80px rgba(38, 30, 22, 0.25);
+      z-index: 200;
+    }
+
+    dialog::backdrop {
+      background: rgba(24, 19, 15, 0.65);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal-close-trigger {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 30;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #18130f;
+      color: #f4eee5;
+      display: grid;
+      place-items: center;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- ========== SKIP LINK ========== -->
+  <a href="#video-editing" class="sr-only">Skip to primary discipline</a>
+
+  <!-- ========== NAVBAR (ONLY THE 5 SPECIFIC SECTIONS) ========== -->
+  <nav id="navbar" class="site-nav" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <a href="#top" class="nav-brand">
+        <span class="brand-dot"></span>
+        <span class="brand-logo" data-name>Arjun</span>
+      </a>
+
+      <!-- Only the 5 specific sections requested -->
+      <ul class="nav-links">
+        <li><a href="#video-editing">Video Editing</a></li>
+        <li><a href="#content-writing">Content Writing</a></li>
+        <li><a href="#graphic-design">Graphic Design</a></li>
+        <li><a href="#creator-design">Creator Design</a></li>
+        <li><a href="#concept-arts">Concept Arts</a></li>
+      </ul>
+
+      <a href="#contact" class="btn-primary">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ========== MINIMAL HERO ========== -->
+    <header id="top" class="hero-minimal">
+      <div class="container">
+        <div class="hero-tag">
+          <span>● Multi-Disciplinary Portfolio</span>
+          <span>// 2026</span>
+        </div>
+
+        <h1 class="hero-title">
+          Crafting Ideas <br>Across Five Creative Disciplines.
+        </h1>
+
+        <div class="hero-lead-row">
+          <p class="hero-lead-text">
+            From cinematic video editing and narrative scriptwriting to bespoke brand systems, viral creator assets, and
+            immersive concept art. Explore each specialized discipline below in curated card format.
+          </p>
+
+          <div class="discipline-jump-pills">
+            <a href="#video-editing" class="jump-pill">01 / Video Editing</a>
+            <a href="#content-writing" class="jump-pill">02 / Content Writing</a>
+            <a href="#graphic-design" class="jump-pill">03 / Graphic Design</a>
+            <a href="#creator-design" class="jump-pill">04 / Creator Design</a>
+            <a href="#concept-arts" class="jump-pill">05 / Concept Arts</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+   01. VIDEO EDITING SECTION
+   ========================================================================== -->
+    <section id="video-editing" class="discipline-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">01 / Video Editing</div>
+          <h2 class="section-title">Video Editing &amp; Color Grading</h2>
+          <p class="section-subtitle">
+            Narrative pacing, commercial visual rhythm, sound design sync, and Hollywood-grade color finishing in
+            DaVinci Resolve Studio.
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="card-grid-3">
+          <!-- Card 1 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/project_brandstory.jpg" alt="Velocita Coast luxury sports car commercial" loading="lazy">
+              <span class="card-badge-top">Commercial Ad</span>
+              <button class="card-action-btn" data-detail-type="video" data-detail-title="Velocita Coast Commercial"
+                data-detail-desc="30s high-octane luxury sports car spot along wet coastal switchbacks with sharp audio sync and custom wet-road grade."
+                data-detail-img="assets/project_brandstory.jpg"
+                data-detail-meta="RED Monstro 8K VV · DaVinci Resolve · 2.39:1" aria-label="Open project breakdown">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Velocita Coast</h3>
+                <p class="card-desc">High-octane commercial spot cut to precision sound design and cinematic anamorphic
+                  lens flares.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">Commercial Spot</span>
+                <span class="card-tag-pill">DaVinci Resolve</span>
+                <span class="card-tag-pill">2.39:1 Anamorphic</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/project_pulsedrop.jpg" alt="Pulse Drop neon commercial spot" loading="lazy">
+              <span class="card-badge-top">Product Spot</span>
+              <button class="card-action-btn" data-detail-type="video" data-detail-title="Pulse Drop: Neon Flux"
+                data-detail-desc="High-energy athletic shoe & electrolyte beverage commercial spot cut to the beat with liquid simulation sync."
+                data-detail-img="assets/project_pulsedrop.jpg"
+                data-detail-meta="Phantom Flex 4K (1000 FPS) · Premiere Pro · 16:9 UHD"
+                aria-label="Open project breakdown">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Pulse Drop: Neon Flux</h3>
+                <p class="card-desc">Thirty-second product spot tuned for high-energy retention and bass-heavy audio
+                  synchronization.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">Product Ad</span>
+                <span class="card-tag-pill">Premiere Pro</span>
+                <span class="card-tag-pill">Sound Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/project_goldenhour.jpg" alt="Golden Hour NYC vertical reel" loading="lazy">
+              <span class="card-badge-top">Viral Reel</span>
+              <button class="card-action-btn" data-detail-type="video" data-detail-title="Golden Hour NYC Reel"
+                data-detail-desc="Editorial fashion & travel reel capturing sunset light in Manhattan with over 4.2M views across social media."
+                data-detail-img="assets/project_goldenhour.jpg"
+                data-detail-meta="Sony FX3 (Cine EI) · Final Cut Pro · 9:16 Vertical"
+                aria-label="Open project breakdown">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Golden Hour NYC</h3>
+                <p class="card-desc">Vertical 9:16 short-form reel with rhythmic jump cuts and 35mm warm film emulsion
+                  grading.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">Reels &amp; Shorts</span>
+                <span class="card-tag-pill">4.2M+ Views</span>
+                <span class="card-tag-pill">9:16 Vertical</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive Color Grading Lab Card Inside Video Editing -->
+        <div class="color-lab-card">
+          <div class="lab-hud-top">
+            <div><strong>DA VINCI RESOLVE COLOR SUITE</strong> // LOG RAW vs FILM GRADE</div>
+            <div>DRAG SLIDER HORIZONTALLY TO COMPARE ARRI LogC3 TO KODAK 2383 PRINT</div>
+          </div>
+          <div id="compareBox" class="compare-box">
+            <div class="compare-layer-log">
+              <img src="assets/colorgrade_scene.jpg" alt="Uncompressed flat camera LOG RAW footage">
+              <span
+                style="position:absolute; top:14px; right:14px; background:rgba(24,19,15,0.85); color:#f4eee5; padding:4px 10px; border-radius:9999px; font-family:var(--font-mono); font-size:0.72rem;">ARRI
+                LogC3 (RAW)</span>
+            </div>
+            <div id="gradedLayer" class="compare-layer-graded">
+              <img id="gradedImg" src="assets/colorgrade_scene.jpg" alt="Finished cinematic Kodak 2383 color grade">
+              <span
+                style="position:absolute; top:14px; left:14px; background:var(--accent-amber); color:#ffffff; padding:4px 10px; border-radius:9999px; font-family:var(--font-mono); font-size:0.72rem; font-weight:700;">KODAK
+                2383 FILM GRADE</span>
+            </div>
+            <div id="compareHandle" class="compare-handle-line">
+              <div class="compare-handle-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="lab-controls-bar">
+            <div class="lut-buttons">
+              <button class="lut-btn active" data-lut="kodak">Kodak 2383 Print</button>
+              <button class="lut-btn" data-lut="teal">Teal &amp; Orange</button>
+              <button class="lut-btn" data-lut="noir">Moody Noir</button>
+            </div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">
+              ARRI Alexa Mini LF · Cooke Anamorphic /i
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+   02. CONTENT WRITING SECTION
+   ========================================================================== -->
+
+    <section id="content-writing" class="discipline-section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">02 / Content Writing</div>
+          <h2 class="section-title">Content Writing &amp; Scriptwriting</h2>
+          <p class="section-subtitle">
+            Narrative architecture, high-retention video hooks, commercial brand manifestos, and story-driven screenplay
+            development.
+          </p>
+        </div>
+
+
+
+        <!-- 3 Core Showcase Cards in Grid -->
+        <div class="card-grid-3">
+          <!-- Card 1: Narrative Screenplay -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/content_writing.jpg" alt="Screenplay manuscript and vintage typewriter" loading="lazy">
+              <span class="card-badge-top">Feature Film Script</span>
+              <button class="card-action-btn" data-detail-type="text"
+                data-detail-title="Echoes of a Ghost (Narrative Screenplay)"
+                data-detail-desc="24-page psychological screenplay exploring grief, memory, and unresolved closure in an isolated coastal village. Formatted to industry Final Draft specifications with dialogue-lean atmospheric tension."
+                data-detail-img="assets/content_writing.jpg"
+                data-detail-meta="Screenplay Spec · Final Draft · 24 Pages · Psychological Drama"
+                aria-label="Open script details">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Echoes of a Ghost</h3>
+                <p class="card-desc">Dialogue-restrained narrative screenplay calibrated for heavy visual subtext and
+                  slow-burn suspense.</p>
+
+                <div class="script-snippet-preview">
+                  <div class="slugline">EXT. LIGHTHOUSE POINT - DUSK</div>
+                  <div>Gale-force ocean wind tears at the rusted iron rail. MARCUS (40s) stands motionless.</div>
+                  <div class="dialogue-cue">MARCUS</div>
+                  <div class="dialogue-body">"You didn't come to save me, did you?"</div>
+                </div>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">Screenwriting</span>
+                <span class="card-tag-pill">Final Draft</span>
+                <span class="card-tag-pill">Character Arcs</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Interactive High-Retention Hook Engine -->
+          <article class="portfolio-card">
+            <div class="hook-switcher-box">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                  <span class="card-badge-top" style="position:static;">Retention Engine</span>
+                  <span
+                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); font-weight:600;">Interactive
+                    Toggle</span>
+                </div>
+
+                <h3 class="card-title">The 3-Second Retention Loop</h3>
+                <p class="card-desc" style="margin-top:0.4rem; margin-bottom:1.15rem;">
+                  Psychological curiosity gaps engineered to eliminate viewer drop-off in the first 3 seconds of
+                  short-form
+                  video.
+                </p>
+
+                <!-- Interactive Switcher -->
+                <div class="hook-toggle-bar">
+                  <button id="hookBtnGeneric" class="hook-toggle-btn" type="button">Raw Generic Hook</button>
+                  <button id="hookBtnRetention" class="hook-toggle-btn active" type="button">Retention Rewrite</button>
+                </div>
+
+                <!-- Dynamic Display Area -->
+                <div id="hookDisplayArea" class="hook-display-area engineered">
+                  <div>
+                    <div id="hookBadge" class="hook-metric-badge good">
+                      <span style="width:6px; height:6px; border-radius:50%; background:#10b981;"></span>
+                      <span id="hookMetricText">71% 30s Hold (+52% Lift)</span>
+                    </div>
+                    <p id="hookQuoteText" class="hook-quote-text">
+                      "If your color grades look like muddy amateur YouTube videos, you're making this 1 node mistake.
+                      Don't
+                      touch curves until you flip this."
+                    </p>
+                  </div>
+                  <div id="hookFootnote"
+                    style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); margin-top:0.75rem;">
+                    ✦ Pattern Interrupt + Open Loop Psychological Trigger
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-tags" style="margin-top:1.5rem;">
+                <span class="card-tag-pill">YouTube &amp; TikTok</span>
+                <span class="card-tag-pill">Cognitive Triggers</span>
+                <span class="card-tag-pill">18M+ Views</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Commercial Brand Voice & Manifesto -->
+          <article class="portfolio-card">
+            <div class="card-body"
+              style="background:#ffffff; border-radius:var(--radius-lg); padding:1.75rem; min-height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                  <span class="card-badge-top" style="position:static;">Sound Studio VO</span>
+                  <span
+                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-amber); font-weight:700;">00:30
+                    TVC</span>
+                </div>
+
+                <!-- Simulated Audio Waveform -->
+                <div class="audio-wave-wrap" title="Simulated audio speech cadence waveform">
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                </div>
+
+                <h3 class="card-title">Velocita: The Silence of Speed</h3>
+                <p class="card-desc" style="margin-top:0.4rem; margin-bottom:1rem;">
+                  Brand manifestos and voiceover copy tuned for precise syllable counts and cinematic acoustic
+                  resonance.
+                </p>
+
+                <div
+                  style="padding:1rem; background:#faf7f2; border-radius:var(--radius-sm); border:1px solid var(--border-subtle); border-left:3px solid var(--accent-teal); font-family:var(--font-mono); font-size:0.78rem; line-height:1.6; color:var(--text-secondary);">
+                  <div style="color:var(--text-muted); font-size:0.7rem; margin-bottom:4px;">[AUDIO: ENGINE HUM DROPS ·
+                    RAIN
+                    STRIKES ROOF]</div>
+                  <div style="color:var(--text-primary); font-weight:600;">"True speed is not an acceleration of time.
+                    It is
+                    the deliberate removal of everything unnecessary."</div>
+                  <div style="color:var(--text-muted); font-size:0.7rem; margin-top:4px;">[BEAT — TIRES BITE WET
+                    ASPHALT]
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-tags" style="margin-top:1.5rem;">
+                <span class="card-tag-pill">Brand Manifesto</span>
+                <span class="card-tag-pill">110 WPM Cadence</span>
+                <span class="card-tag-pill">Commercial TVC</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+   03. GRAPHIC DESIGN SECTION
+   ========================================================================== -->
+    <section id="graphic-design" class="discipline-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">03 / Graphic Design</div>
+          <h2 class="section-title">Graphic Design &amp; Brand Identity</h2>
+          <p class="section-subtitle">
+            Bespoke typographic systems, editorial packaging, Swiss grid visual identities, and exhibition print
+            collateral.
+          </p>
+        </div>
+
+        <div class="card-grid-3">
+          <!-- Card 1 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/graphic_design.jpg" alt="Aurelia luxury graphic design brand identity" loading="lazy">
+              <span class="card-badge-top">Brand Identity</span>
+              <button class="card-action-btn" data-detail-type="design" data-detail-title="Aurelia Brand System"
+                data-detail-desc="Complete luxury identity system: custom serif logotype, grid stationery, debossed foil packaging, and brand book guidelines."
+                data-detail-img="assets/graphic_design.jpg"
+                data-detail-meta="Adobe Illustrator · InDesign · Typography · Print Spec"
+                aria-label="Open design details">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Aurelia Identity System</h3>
+                <p class="card-desc">Bespoke luxury brand system featuring custom typography, grid stationery, and
+                  tactile print guidelines.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">Visual Identity</span>
+                <span class="card-tag-pill">Typography</span>
+                <span class="card-tag-pill">Brand Guidelines</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/project_cybermotion.jpg" alt="Chronos Drift 3D kinetic typography poster" loading="lazy">
+              <span class="card-badge-top">Kinetic Typography</span>
+              <button class="card-action-btn" data-detail-type="design"
+                data-detail-title="Chronos Kinetic Poster System"
+                data-detail-desc="Experimental 3D typography posters exploring refractive materials, chromatic dispersion, and structural grid deformation."
+                data-detail-img="assets/project_cybermotion.jpg"
+                data-detail-meta="Cinema 4D · Illustrator · After Effects · 300 DPI" aria-label="Open design details">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Chronos Type Experiment</h3>
+                <p class="card-desc">3D kinetic typography posters exploring refractive glass lettering, dynamic
+                  lighting, and grid layouts.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">3D Typography</span>
+                <span class="card-tag-pill">Poster Series</span>
+                <span class="card-tag-pill">Cinema 4D</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="portfolio-card">
+            <div class="card-body"
+              style="background:#ffffff; border-radius:var(--radius-lg); padding:2.25rem; min-height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <span class="card-badge-top"
+                  style="position:static; display:inline-block; margin-bottom:1.25rem;">Editorial Systems</span>
+                <h3 class="card-title">Swiss Grid Editorial</h3>
+                <p class="card-desc" style="margin-top:0.75rem;">
+                  Rigorous modular layout systems for architectural catalogs, art books, and digital publications with
+                  immaculate typographic hierarchy.
+                </p>
+                <ul
+                  style="margin-top:1.25rem; list-style:none; display:flex; flex-direction:column; gap:8px; font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);">
+                  <li>✦ 12-Column Asymmetric Modular Grids</li>
+                  <li>✦ Micro-Typography &amp; Leading Calculations</li>
+                  <li>✦ Editorial Bookbinding Specifications</li>
+                </ul>
+              </div>
+              <div class="card-tags" style="margin-top:1.5rem;">
+                <span class="card-tag-pill">Grid Systems</span>
+                <span class="card-tag-pill">InDesign</span>
+                <span class="card-tag-pill">Print &amp; Digital</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+   04. CREATOR DESIGN SECTION
+   ========================================================================== -->
+    <section id="creator-design" class="discipline-section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">04 / Creator Design</div>
+          <h2 class="section-title">Creator Design &amp; Thumbnails</h2>
+          <p class="section-subtitle">
+            High-CTR YouTube thumbnail systems, viral creator visual branding, stream HUD overlays, and multi-platform
+            social kits.
+          </p>
+        </div>
+
+        <div class="card-grid-3">
+          <!-- Card 1 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/creator_design.jpg" alt="Digital Creator Pro YouTube thumbnail and branding showcase"
+                loading="lazy">
+              <span class="card-badge-top">High-CTR Thumbnail</span>
+              <button class="card-action-btn" data-detail-type="creator" data-detail-title="Creator Pro Growth System"
+                data-detail-desc="Comprehensive YouTube thumbnail and banner identity designed for 14%+ Click-Through Rates with 3D text styling and dynamic color separation."
+                data-detail-img="assets/creator_design.jpg"
+                data-detail-meta="Photoshop · 3D Blenders · CTR Optimization · 14.8% CTR"
+                aria-label="Open creator design details">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">YouTube Thumbnail Suite</h3>
+                <p class="card-desc">Engineered for high CTR: clear focal subject hierarchy, expressive contrast, and
+                  bold 3D typography.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">14.8% Avg CTR</span>
+                <span class="card-tag-pill">Photoshop</span>
+                <span class="card-tag-pill">YouTube Packaging</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="portfolio-card">
+            <div class="card-body"
+              style="background:#ffffff; border-radius:var(--radius-lg); padding:2rem; min-height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <span class="card-badge-top"
+                  style="position:static; display:inline-block; margin-bottom:1.25rem;">Multi-Platform Assets</span>
+                <h3 class="card-title">Omnichannel Creator Kit</h3>
+                <p class="card-desc" style="margin-top:0.75rem;">
+                  Cohesive social ecosystem branding: YouTube banners, Instagram carousel templates, TikTok cover
+                  styles, and Discord community assets.
+                </p>
+                <div
+                  style="margin-top:1.25rem; padding:1rem; background:rgba(38,30,22,0.04); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);">
+                  Consistent typography, color codes, and visual language across all 6 creator touchpoints.
+                </div>
+              </div>
+              <div class="card-tags" style="margin-top:1.5rem;">
+                <span class="card-tag-pill">YouTube Banners</span>
+                <span class="card-tag-pill">Instagram Kits</span>
+                <span class="card-tag-pill">Creator Branding</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="portfolio-card">
+            <div class="card-body"
+              style="background:#ffffff; border-radius:var(--radius-lg); padding:2rem; min-height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <span class="card-badge-top"
+                  style="position:static; display:inline-block; margin-bottom:1.25rem;">Stream Assets</span>
+                <h3 class="card-title">Live Stream HUD &amp; Overlays</h3>
+                <p class="card-desc" style="margin-top:0.75rem;">
+                  Custom Twitch &amp; YouTube livestream packages: animated alert overlays, lower thirds, stinger
+                  transitions, and webcam frames.
+                </p>
+                <div
+                  style="margin-top:1.25rem; padding:1rem; background:rgba(38,30,22,0.04); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);">
+                  Lightweight WebM alpha transparency files with 60FPS fluid motion.
+                </div>
+              </div>
+              <div class="card-tags" style="margin-top:1.5rem;">
+                <span class="card-tag-pill">OBS / Streamlabs</span>
+                <span class="card-tag-pill">Motion Overlays</span>
+                <span class="card-tag-pill">Stinger FX</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+   05. CONCEPT ARTS SECTION
+   ========================================================================== -->
+    <section id="concept-arts" class="discipline-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">05 / Concept Arts</div>
+          <h2 class="section-title">Concept Arts &amp; Matte Painting</h2>
+          <p class="section-subtitle">
+            World-building visual development, cinematic film keyframes, environmental digital painting, and atmospheric
+            mood boards.
+          </p>
+        </div>
+
+        <div class="card-grid-3">
+          <!-- Card 1 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/concept_art.jpg" alt="Aethelgard floating monoliths environmental concept art"
+                loading="lazy">
+              <span class="card-badge-top">World-Building</span>
+              <button class="card-action-btn" data-detail-type="concept"
+                data-detail-title="Aethelgard Monoliths Environment"
+                data-detail-desc="Full fantasy sci-fi environmental concept painting depicting ancient floating gravity-defying monoliths over a twilight mountain valley."
+                data-detail-img="assets/concept_art.jpg"
+                data-detail-meta="Photoshop · Procreate · Digital Matte Painting · 8K Master"
+                aria-label="Open concept art details">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Aethelgard Monoliths</h3>
+                <p class="card-desc">Environmental concept painting capturing ancient floating monoliths over a glowing
+                  twilight mountain valley.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">Matte Painting</span>
+                <span class="card-tag-pill">Sci-Fi Fantasy</span>
+                <span class="card-tag-pill">Visual Development</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="portfolio-card">
+            <div class="card-img-wrap">
+              <img src="assets/project_travel.jpg" alt="Alpen Glow mountain expedition keyframe" loading="lazy">
+              <span class="card-badge-top">Film Keyframe</span>
+              <button class="card-action-btn" data-detail-type="concept"
+                data-detail-title="Alpen Glow Cinematic Keyframe"
+                data-detail-desc="Cinematic visual development keyframe for an alpine expedition film, focusing on atmospheric haze and sunset alpenglow lighting."
+                data-detail-img="assets/project_travel.jpg"
+                data-detail-meta="Cinematic Keyframe · Lighting Study · Visual Dev"
+                aria-label="Open concept art details">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">Alpen Expedition Keyframe</h3>
+                <p class="card-desc">Lighting and mood keyframe study for a narrative mountain documentary exploring
+                  solitary scale and warmth.</p>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag-pill">Lighting Study</span>
+                <span class="card-tag-pill">Film Moodboard</span>
+                <span class="card-tag-pill">Keyframe Art</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="portfolio-card">
+            <div class="card-body"
+              style="background:#ffffff; border-radius:var(--radius-lg); padding:2rem; min-height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <span class="card-badge-top"
+                  style="position:static; display:inline-block; margin-bottom:1.25rem;">World-Building Process</span>
+                <h3 class="card-title">Pre-Production Concepting</h3>
+                <p class="card-desc" style="margin-top:0.75rem;">
+                  Translating written director briefs into visual reality: color scripts, costume silhouette studies,
+                  prop ideation, and architectural mood boards.
+                </p>
+                <div
+                  style="margin-top:1.25rem; padding:1rem; background:rgba(38,30,22,0.04); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);">
+                  Fast iterative sketches transitioning to full-fidelity cinematic keys before cameras roll.
+                </div>
+              </div>
+              <div class="card-tags" style="margin-top:1.5rem;">
+                <span class="card-tag-pill">Pre-Production</span>
+                <span class="card-tag-pill">Color Scripts</span>
+                <span class="card-tag-pill">Concept Pipeline</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+   CONTACT SECTION
+   ========================================================================== -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-card-box">
+          <div class="contact-layout-grid">
+            <div>
+              <div class="section-tag">Let's Collaborate</div>
+              <h2 class="section-title">Start A Project</h2>
+              <p class="section-subtitle" style="margin-top:1rem;">
+                Available for freelance and contract work across video editing, writing, graphic design, creator
+                packaging, and concept arts.
+              </p>
+
+              <div style="margin-top:2.5rem; display:flex; flex-direction:column; gap:1.25rem;">
+                <div>
+                  <div
+                    style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:600;">
+                    Email Direct</div>
+                  <a href="mailto:arjun.creative@example.com"
+                    style="font-size:1.15rem; font-weight:700; color:var(--text-primary);">arjun.creative@example.com</a>
+                </div>
+                <div>
+                  <div
+                    style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:600;">
+                    WhatsApp / Fast Chat</div>
+                  <a href="https://wa.me/" target="_blank" rel="noopener"
+                    style="font-size:1.15rem; font-weight:700; color:var(--accent-amber);">Chat on WhatsApp →</a>
+                </div>
+              </div>
+            </div>
+
+            <form id="contactForm" novalidate>
+              <div class="form-field">
+                <label for="name" class="form-label-tag">Name</label>
+                <input id="name" name="name" required placeholder="Your Name" class="form-input-ctrl">
+              </div>
+              <div class="form-field">
+                <label for="email" class="form-label-tag">Email</label>
+                <input id="email" name="email" type="email" required placeholder="your.email@company.com"
+                  class="form-input-ctrl">
+              </div>
+              <div class="form-field">
+                <label for="discipline" class="form-label-tag">Primary Discipline</label>
+                <select id="discipline" name="discipline" required class="form-input-ctrl">
+                  <option value="">Select a discipline</option>
+                  <option>Video Editing &amp; Color Grading</option>
+                  <option>Content Writing &amp; Scriptwriting</option>
+                  <option>Graphic Design &amp; Brand Systems</option>
+                  <option>Creator Design &amp; Thumbnails</option>
+                  <option>Concept Arts &amp; Matte Painting</option>
+                  <option>Multi-Discipline Package</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="brief" class="form-label-tag">Project Overview</label>
+                <textarea id="brief" name="brief" rows="3" required
+                  placeholder="Tell me about your project, timeline, and goals..." class="form-input-ctrl"></textarea>
+              </div>
+              <div style="display:flex; align-items:center; gap:1rem; margin-top:1.5rem;">
+                <button type="submit" id="submitBtn" class="btn-primary" style="padding:0.85rem 2rem;">
+                  Send Project Inquiry
+                </button>
+                <span id="formStatus" style="font-size:0.85rem; font-weight:600;"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer-minimal">
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> <strong data-name>Arjun</strong>. All Rights Reserved.
+      </div>
+      <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);">
+        Video Editing · Content Writing · Graphic Design · Creator Design · Concept Arts
+      </div>
+      <a href="#top"
+        style="font-family:var(--font-mono); font-size:0.8rem; font-weight:600; color:var(--text-primary);">Back to Top
+        ↑</a>
+    </div>
+  </footer>
+
+  <!-- ========== INTERACTIVE DETAIL MODAL ========== -->
+  <dialog id="dlg" aria-label="Project details modal">
+    <button id="closeModal" class="modal-close-trigger" aria-label="Close dialog">✕</button>
+    <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden;">
+      <img id="modalImg" src="" alt="Project modal view" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div style="padding:2rem;">
+      <span id="modalMeta"
+        style="font-family:var(--font-mono); font-size:0.78rem; color:var(--accent-amber); font-weight:700; text-transform:uppercase;"></span>
+      <h3 id="modalTitle"
+        style="font-family:var(--font-display); font-size:1.8rem; font-weight:800; text-transform:uppercase; margin:0.5rem 0 0.75rem;">
+      </h3>
+      <p id="modalDesc" style="color:var(--text-secondary); line-height:1.7; font-size:0.95rem; max-width:650px;"></p>
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+   SCRIPTS & INTERACTION LOGIC
+   ========================================================================== -->
+  <script>
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
+
+    // Year
+    $("#year").textContent = new Date().getFullYear();
+
+    // Navbar Active State on Scroll
+    const sections = $$("section[id]");
+    const navLinks = $$(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.pageYOffset;
+      const nav = $("#navbar");
+      if (scrollY > 40) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
+
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute("id");
+        if (scrollY >= top && scrollY < top + height) {
+          navLinks.forEach(link => {
+            link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+          });
+        }
+      });
+    });
+
+    // Interactive Color Lab (Inside Video Editing section)
+    const compareBox = $("#compareBox");
+    const gradedLayer = $("#gradedLayer");
+    const gradedImg = $("#gradedImg");
+    const compareHandle = $("#compareHandle");
+
+    let isDragging = false;
+    function setSplit(percent) {
+      const p = Math.max(0, Math.min(100, percent));
+      gradedLayer.style.clipPath = `polygon(0 0, ${p}% 0, ${p}% 100%, 0 100%)`;
+      compareHandle.style.left = `${p}%`;
+    }
+
+    function handleDrag(e) {
+      const rect = compareBox.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const offsetX = clientX - rect.left;
+      setSplit((offsetX / rect.width) * 100);
+    }
+
+    compareBox.addEventListener("mousedown", e => { isDragging = true; handleDrag(e); });
+    window.addEventListener("mousemove", e => { if (isDragging) handleDrag(e); });
+    window.addEventListener("mouseup", () => { isDragging = false; });
+    compareBox.addEventListener("touchstart", e => { isDragging = true; handleDrag(e); }, { passive: true });
+    window.addEventListener("touchmove", e => { if (isDragging) handleDrag(e); }, { passive: true });
+    window.addEventListener("touchend", () => { isDragging = false; });
+
+    setSplit(50);
+
+    // LUT simulation
+    const LUT_PRESETS = {
+      kodak: "contrast(1.15) saturate(1.2) brightness(1.02) hue-rotate(-2deg)",
+      teal: "contrast(1.3) saturate(1.35) brightness(0.98) hue-rotate(8deg)",
+      noir: "contrast(1.45) saturate(0) brightness(0.95)"
+    };
+
+    $$(".lut-btn").forEach(btn => {
+      btn.onclick = () => {
+        $$(".lut-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const lut = btn.dataset.lut;
+        if (LUT_PRESETS[lut]) gradedImg.style.filter = LUT_PRESETS[lut];
+      };
+    });
+
+    // Interactive Project Details Lightbox Modal
+    const dlg = $("#dlg");
+    const modalImg = $("#modalImg");
+    const modalTitle = $("#modalTitle");
+    const modalDesc = $("#modalDesc");
+    const modalMeta = $("#modalMeta");
+
+    document.addEventListener("click", e => {
+      const btn = e.target.closest("button[data-detail-title]");
+      if (!btn) return;
+      modalTitle.textContent = btn.dataset.detailTitle;
+      modalDesc.textContent = btn.dataset.detailDesc;
+      modalMeta.textContent = btn.dataset.detailMeta || "";
+      modalImg.src = btn.dataset.detailImg || "";
+      dlg.showModal();
+    });
+
+    $("#closeModal").onclick = () => dlg.close();
+    dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+    // ==========================================================================
+    // CONTENT WRITING INTERACTION LOGIC
+    // ==========================================================================
+    // 1. Hook Switcher (Generic vs Retention)
+    const hookBtnGeneric = $("#hookBtnGeneric");
+    const hookBtnRetention = $("#hookBtnRetention");
+    const hookDisplayArea = $("#hookDisplayArea");
+    const hookBadge = $("#hookBadge");
+    const hookMetricText = $("#hookMetricText");
+    const hookQuoteText = $("#hookQuoteText");
+    const hookFootnote = $("#hookFootnote");
+
+    if (hookBtnGeneric && hookBtnRetention) {
+      hookBtnGeneric.onclick = () => {
+        hookBtnGeneric.classList.add("active");
+        hookBtnRetention.classList.remove("active");
+        hookDisplayArea.className = "hook-display-area generic";
+        hookBadge.className = "hook-metric-badge bad";
+        hookMetricText.textContent = "19% 30s Hold (Drop-off Spike)";
+        hookQuoteText.textContent = '"Hey guys, welcome back to my channel. Today I wanted to share five quick tips on video editing that I think will really help you guys out..."';
+        hookFootnote.textContent = "✖ Fluffy greeting & delayed premise triggers immediate scroll-away.";
+      };
+
+      hookBtnRetention.onclick = () => {
+        hookBtnRetention.classList.add("active");
+        hookBtnGeneric.classList.remove("active");
+        hookDisplayArea.className = "hook-display-area engineered";
+        hookBadge.className = "hook-metric-badge good";
+        hookMetricText.textContent = "71% 30s Hold (+52% Lift)";
+        hookQuoteText.textContent = '"If your color grades look like muddy amateur YouTube videos, you\'re making this 1 node mistake. Don\'t touch curves until you flip this."';
+        hookFootnote.textContent = "✦ Pattern Interrupt + Open Loop Psychological Trigger.";
+      };
+    }
+
+    // 2. Interactive Manuscript & Script Reader Tabs
+    const SCRIPT_DATA = {
+      screenplay: {
+        wordCount: "146 Words",
+        runTime: "00:48",
+        tone: "Atmospheric Tension",
+        rawText: `EXT. LIGHTHOUSE POINT - DUSK\n\nGale-force Atlantic wind tears across the black basalt rock. Rusted iron cables creak under tension.\n\nMARCUS (40s, rain-soaked wool coat) stands at the cliff edge. His hands are buried deep in his pockets. Behind him, the beacon sweeps a blinding white beam across the frothing surf.\n\nMARCUS\n(without turning)\n"You didn't come to save me, did you?"\n\nA silhouette steps from behind the generator shed: ELENA (30s). She holds a water-damaged ledger.\n\nELENA\n"I came for what you left in the well."\n\nMarcus smiles. A thin, bitter knife of a smile.\n\nFADE OUT.`,
+        html: `
+      <div class="sc-slug">EXT. LIGHTHOUSE POINT - DUSK</div>
+      <div class="sc-action">Gale-force Atlantic wind tears across the black basalt rock. Rusted iron cables creak under tension.</div>
+      <div class="sc-action">MARCUS (40s, rain-soaked wool coat) stands at the cliff edge. His hands are buried deep in his pockets. Behind him, the beacon sweeps a blinding white beam across the frothing surf.</div>
+      <div class="sc-character">MARCUS</div>
+      <div class="sc-parenthetical">(without turning)</div>
+      <div class="sc-dialogue">"You didn't come to save me, did you?"</div>
+      <div class="sc-action">A silhouette steps from behind the generator shed: ELENA (30s). She holds a water-damaged ledger.</div>
+      <div class="sc-character">ELENA</div>
+      <div class="sc-dialogue">"I came for what you left in the well."</div>
+      <div class="sc-action">Marcus smiles. A thin, bitter knife of a smile.</div>
+      <div class="sc-transition">FADE OUT.</div>
+    `
+      },
+      viral: {
+        wordCount: "112 Words",
+        runTime: "00:36",
+        tone: "High Energy & Urgent",
+        rawText: `[00:00 - 00:03] THE COGNITIVE HOOK:\n"Stop buying $3,000 cinema cameras until you fix this single camera setting."\n\n[00:03 - 00:15] PATTERN INTERRUPT & PAIN POINT:\n"Every beginner spends months agonizing over 10-bit vs 8-bit codecs. But if your shutter angle is locked at 1/50th without checking your flicker rate in Europe, your motion blur is completely ruined."\n\n[00:15 - 00:30] THE VALUE ESCALATION:\n"Here is the golden rule: double your frame rate, lock the shutter angle at 180 degrees, and calculate your light frequency before you hit record."\n\n[00:30 - 00:36] RETENTION LOOP & SAVE CTA:\n"Save this before your next shoot."`,
+        html: `
+      <div class="sc-slug">[00:00 - 00:03] THE COGNITIVE HOOK</div>
+      <div class="sc-action">"Stop buying $3,000 cinema cameras until you fix this single camera setting."</div>
+      <div class="sc-slug">[00:03 - 00:15] PATTERN INTERRUPT & PAIN POINT</div>
+      <div class="sc-action">"Every beginner spends months agonizing over 10-bit vs 8-bit codecs. But if your shutter angle is locked at 1/50th without checking your flicker rate in Europe, your motion blur is completely ruined."</div>
+      <div class="sc-slug">[00:15 - 00:30] THE VALUE ESCALATION</div>
+      <div class="sc-action">"Here is the golden rule: double your frame rate, lock the shutter angle at 180 degrees, and calculate your light frequency before you hit record."</div>
+      <div class="sc-transition">[00:30 - 00:36] RETENTION LOOP & SAVE CTA</div>
+    `
+      },
+      manifesto: {
+        wordCount: "98 Words",
+        runTime: "00:30",
+        tone: "Contemplative Luxury",
+        rawText: `[SOUND: LOW SUB-BASS RUMBLE. DISTANT RAIN ON ROOF]\n\nVOICEOVER (WARM, MEASURED, CONFIDENT):\n"Speed is not an acceleration of time.\nIt is the deliberate removal of everything unnecessary.\n\nThe excess weight.\nThe noise.\nThe compromise.\n\nWhen every line serves a purpose, motion becomes effortless.\nAnd power becomes quiet."\n\n[SOUND: V12 COLD START REVS ONCE, CLEAR AND SHARP]\n\nVOICEOVER:\n"Velocita. Precision in every second."\n\n[FADE TO LOGO]`,
+        html: `
+      <div class="sc-slug">[00:00 - 00:08] SCENE INCEPTION — AUDIO SPEC</div>
+      <div class="sc-action">[SOUND: LOW SUB-BASS RUMBLE. DISTANT RAIN ON ROOF]</div>
+      <div class="sc-character">VOICEOVER</div>
+      <div class="sc-parenthetical">(warm, measured, confident)</div>
+      <div class="sc-dialogue">"Speed is not an acceleration of time. It is the deliberate removal of everything unnecessary."</div>
+      <div class="sc-action">[BEAT — 1.5s SILENCE]</div>
+      <div class="sc-dialogue">"When every line serves a purpose, motion becomes effortless. And power becomes quiet."</div>
+      <div class="sc-character">VOICEOVER</div>
+      <div class="sc-dialogue">"Velocita. Precision in every second."</div>
+      <div class="sc-transition">[FADE TO LOGO]</div>
+    `
+      }
+    };
+
+    let currentScriptKey = "screenplay";
+    const scriptContentBox = $("#scriptContentBox");
+    const hudWordCount = $("#hudWordCount");
+    const hudRunTime = $("#hudRunTime");
+    const hudTone = $("#hudTone");
+    const copyScriptBtn = $("#copyScriptBtn");
+    const copyIndicator = $("#copyIndicator");
+
+    function renderScript(key) {
+      currentScriptKey = key;
+      const item = SCRIPT_DATA[key];
+      if (!item || !scriptContentBox) return;
+      scriptContentBox.innerHTML = item.html;
+      hudWordCount.textContent = item.wordCount;
+      hudRunTime.textContent = item.runTime;
+      hudTone.textContent = item.tone;
+    }
+
+    if (scriptContentBox) {
+      renderScript("screenplay");
+    }
+
+    $$(".script-tab-btn").forEach(btn => {
+      btn.onclick = () => {
+        $$(".script-tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const key = btn.dataset.script;
+        renderScript(key);
+      };
+    });
+
+    if (copyScriptBtn) {
+      copyScriptBtn.onclick = () => {
+        const raw = SCRIPT_DATA[currentScriptKey]?.rawText || "";
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(raw).then(() => {
+            copyIndicator.style.display = "inline";
+            setTimeout(() => { copyIndicator.style.display = "none"; }, 2500);
+          });
+        }
+      };
+    }
+
+    // Contact Form
+    const contactForm = $("#contactForm");
+    const formStatus = $("#formStatus");
+    const submitBtn = $("#submitBtn");
+
+    contactForm.addEventListener("submit", e => {
+      e.preventDefault();
+      let valid = true;
+      contactForm.querySelectorAll("[required]").forEach(field => {
+        if (!field.value.trim()) {
+          valid = false;
+          field.style.borderColor = "#dc2626";
+        } else {
+          field.style.borderColor = "";
+        }
+      });
+
+      if (!valid) {
+        formStatus.textContent = "Please fill in all required fields.";
+        formStatus.style.color = "#dc2626";
+        return;
+      }
+
+      const data = Object.fromEntries(new FormData(contactForm));
+      const emailTo = "arjun.creative@example.com";
+      const subject = `Inquiry: ${data.discipline} - ${data.name}`;
+      const body = `Name: ${data.name}\nEmail: ${data.email}\nDiscipline: ${data.discipline}\n\nProject Overview:\n${data.brief}`;
+
+      window.location.href = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      formStatus.textContent = "Opening your email client...";
+      formStatus.style.color = "#15803d";
+    });
+  </script>
+</body>
+
+</html>
